@@ -1,0 +1,27 @@
+Working directory: Lab6
+Python 3.12.12 | pytest 9.0.3 | coverage 7.15.0
+
+Command: python -m coverage run --branch --source=fuel_station --data-file=.coverage.branch -m pytest BranchCoverageTest_fuel_station.py
+
+============================= test session starts =============================
+platform win32 -- Python 3.12.12, pytest-9.0.3, pluggy-1.7.0
+rootdir: C:\Users\Vishwas\Desktop\SE\SE-Labs-PES1UG24CS539\Lab6
+configfile: pytest.ini
+collected 39 items
+
+BranchCoverageTest_fuel_station.py ..................................... [ 94%]
+..                                                                       [100%]
+
+============================= 39 passed in 0.11s ==============================
+
+Exit code: 0
+
+Command: python -m coverage report --data-file=.coverage.branch -m --fail-under=100
+
+Name              Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------
+fuel_station.py      37      0     26      0   100%
+-------------------------------------------------------------
+TOTAL                37      0     26      0   100%
+
+Exit code: 0
