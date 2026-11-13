@@ -1,0 +1,31 @@
+Working directory: Lab7
+Command: python -u fuel_station.py
+Standard input (one line per prompt): 'diesel:25\n10,11\n2500|100\n'
+
+==== Running parse_purchase ====
+Enter grade:litres (e.g. diesel:25): Grade and Litres: ('Diesel', 25.0)
+
+==== Running volume_average ====
+Enter pump volumes in litres as CSV (e.g. 10,25,40): Average Volume: 10.5
+
+==== Running payable_bill ====
+Enter bill|discount (e.g. 2500|100): Payable Bill: 2850.0
+
+Exit code: 0
+
+Malformed input run:
+
+Working directory: Lab7
+Command: python -u fuel_station.py
+Standard input (one line per prompt): 'diesel\n10,,20\n100|abc\n'
+
+==== Running parse_purchase ====
+Enter grade:litres (e.g. diesel:25): Invalid purchase
+
+==== Running volume_average ====
+Enter pump volumes in litres as CSV (e.g. 10,25,40): Invalid volumes
+
+==== Running payable_bill ====
+Enter bill|discount (e.g. 2500|100): Invalid bill
+
+Exit code: 0

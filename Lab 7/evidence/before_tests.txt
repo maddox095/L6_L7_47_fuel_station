@@ -1,0 +1,51 @@
+Working directory: Lab7/before
+Command: python -m pytest test_fuel_station.py -q --tb=short --hypothesis-seed=47 --color=no
+
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+________________________ test_parse_purchase_no_crash _________________________
+test_fuel_station.py:6: in test_parse_purchase_no_crash
+    @given(st.text() | st.none())
+                   ^^^
+test_fuel_station.py:8: in test_parse_purchase_no_crash
+    parse_purchase(s)
+fuel_station.py:2: in parse_purchase
+    grade, litres = text.split(':')
+                    ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+E   Falsifying example: test_parse_purchase_no_crash(
+E       s=None,
+E   )
+________________________ test_volume_average_no_crash _________________________
+test_fuel_station.py:12: in test_volume_average_no_crash
+    @given(st.text() | st.none())
+                   ^^^
+test_fuel_station.py:14: in test_volume_average_no_crash
+    volume_average(s)
+fuel_station.py:6: in volume_average
+    values = [int(r) for r in volumes_csv.split(',')]
+                              ^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+E   Falsifying example: test_volume_average_no_crash(
+E       s=None,
+E   )
+_________________________ test_payable_bill_no_crash __________________________
+test_fuel_station.py:18: in test_payable_bill_no_crash
+    @given(st.text() | st.none())
+                   ^^^
+test_fuel_station.py:20: in test_payable_bill_no_crash
+    payable_bill(s)
+fuel_station.py:10: in payable_bill
+    bill, discount = text.split('|')
+                     ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+E   Falsifying example: test_payable_bill_no_crash(
+E       s=None,
+E   )
+=========================== short test summary info ===========================
+FAILED test_fuel_station.py::test_parse_purchase_no_crash - AttributeError: '...
+FAILED test_fuel_station.py::test_volume_average_no_crash - AttributeError: '...
+FAILED test_fuel_station.py::test_payable_bill_no_crash - AttributeError: 'No...
+3 failed in 2.91s
+
+Exit code: 1
